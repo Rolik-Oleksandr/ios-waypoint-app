@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  ios-waypoint-app
-//
-//  Created by Oleksandr Rolik on 14.03.2025.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
