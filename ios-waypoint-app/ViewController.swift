@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         return button
     }()
     
+    var annotationsArray = [MKPointAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +47,9 @@ class ViewController: UIViewController {
     }
 
     @objc func searchAddressButtonTapped() {
-        print("tapSearch")
+        alertAddAdresse(title: "Enter location", placeholder: nil) { [self] (text) in
+            setupPlaceMark(addressPlace: text!)
+        }
     }
     
     @objc func routeButtonTapped() {
@@ -54,6 +58,38 @@ class ViewController: UIViewController {
     
     @objc func resetButtonTapped() {
         print("tapReset")
+    }
+    
+    private func setupPlaceMark(addressPlace: String) {
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(addressPlace) { [self] (placemarks, error) in
+            
+            if let error = error {
+                print ("Geocoding failed with error: \(error.localizedDescription)")
+                alertError(title: "You're not put an address", message: nil)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+            
+            let annotation = MKPointAnnotation()
+            annotation.title = "\(addressPlace)"
+            guard let placemarkLocation = placemark?.location else { return }
+            annotation.coordinate = placemarkLocation.coordinate
+            
+            annotationsArray.append(annotation)
+            
+            if annotationsArray.count > 1 {
+                routeButton.isHidden = false
+            }
+            
+            if annotationsArray.count > 0 {
+                resetButton.isHidden = false
+            }
+            mainMapScreen.showAnnotations(annotationsArray, animated: true)
+        }
     }
     
 }

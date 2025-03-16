@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1AD535A32D86E24700072B47 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1AD535A22D86E23B00072B47 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1A362F5B2D84DBE900BF3D1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		1A362F442D84DBE800BF3D1E /* ios-waypoint-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-waypoint-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A362F5A2D84DBE900BF3D1E /* ios-waypoint-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-waypoint-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A362F642D84DBE900BF3D1E /* ios-waypoint-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-waypoint-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD535A22D86E23B00072B47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		1A362F3B2D84DBE800BF3D1E = {
 			isa = PBXGroup;
 			children = (
+				1AD535A22D86E23B00072B47 /* README.md */,
 				1A362F462D84DBE800BF3D1E /* ios-waypoint-app */,
 				1A362F5D2D84DBE900BF3D1E /* ios-waypoint-appTests */,
 				1A362F672D84DBE900BF3D1E /* ios-waypoint-appUITests */,
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD535A32D86E24700072B47 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
